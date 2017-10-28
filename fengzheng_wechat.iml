@@ -21,5 +21,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="servlet-api" level="project" />
     <orderEntry type="library" exported="" name="dom4j-2.0.0-RC1" level="project" />
+    <orderEntry type="library" name="fastjson-1.2.39" level="project" />
   </component>
 </module>

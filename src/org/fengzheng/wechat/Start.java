@@ -27,7 +27,7 @@ public class Start extends HttpServlet {
         String nonce = request.getParameter("nonce");
         String echostr = request.getParameter("echostr");
 
-        ArrayList<String> array = new ArrayList<String>();
+        ArrayList<String> array = new ArrayList<>();
         array.add(signature);
         array.add(timestamp);
         array.add(nonce);

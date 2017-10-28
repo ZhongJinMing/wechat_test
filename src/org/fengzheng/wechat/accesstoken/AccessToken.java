@@ -4,6 +4,10 @@ package org.fengzheng.wechat.accesstoken;
  * Created by huzhicheng on 2015/11/5.
  */
 public class AccessToken {
+    private String accessToken;
+
+    private int expiresin;
+
     public String getAccessToken() {
         return accessToken;
     }
@@ -20,7 +24,5 @@ public class AccessToken {
         this.expiresin = expiresin;
     }
 
-    private String accessToken;
 
-    private int expiresin;
 }

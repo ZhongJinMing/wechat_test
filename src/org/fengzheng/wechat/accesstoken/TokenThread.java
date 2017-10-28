@@ -8,21 +8,20 @@ import org.fengzheng.wechat.common.NetWorkHelper;
  * Created by huzhicheng on 2015/11/5.
  */
 public class TokenThread implements Runnable {
-    public static String appId = "";
+    public static String appId;
 
-    public static String appSecret= "";
+    public static String appSecret;
 
     //设置为静态
-    public static AccessToken accessToken = null;
+    public static AccessToken accessToken;
 
     public void run(){
         while (true){
             try{
                 accessToken = this.getAccessToken();
-                if(null!=accessToken){
+                if(accessToken != null){
                     System.out.println(accessToken.getAccessToken());
                     Thread.sleep(7000 * 1000); //获取到access_token 休眠7000秒
-                    //Thread.sleep(30*1000);//测试时可以设置短一点时间 方便看效果
 
                 }else{
                     Thread.sleep(1000*3); //获取的access_token为空 休眠3秒
@@ -47,7 +46,7 @@ public class TokenThread implements Runnable {
     private AccessToken getAccessToken(){
         NetWorkHelper netHelper = new NetWorkHelper();
         String Url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",this.appId,this.appSecret);
-        String result = netHelper.getHttpsResponse(Url,"");
+        String result = netHelper.getHttpsResponse(Url,"GET");
         System.out.println(result);
         //response.getWriter().println(result);
         JSONObject json = JSON.parseObject(result);
